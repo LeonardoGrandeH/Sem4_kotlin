@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sem4_kotlin</string>
+    <string name="tituloRegistro">REGISTRAR USUARIO</string>
+    <string name="valetnombre">Ingrese su nombre</string>
+    <string name="valetapellido">Ingrese su apellido</string>
+    <string name="genero">SELECCIONE SU GENERO:</string>
+    <string name="valrbmasculino">Masculino</string>
+    <string name="valrbFemenino">Femenino</string>
+    <string name="preferencias">SELECCIONE SUS PREFERENCIAS:</string>
+    <string name="valcbDeportes">Deportes</string>
+    <string name="valcbMusica">Musica</string>
+    <string name="valcbOtros">Otros</string>
+    <string name="estadocivil">SELECCIONE SU ESTADO CIVIL:</string>
+    <string name="valswNotificacion">¿Notificar?</string>
+    <string name="valbtnRegistrar">REGISTRAR USUARIO</string>
+    <string name="valbtnlistar">LISTAR</string>
+</resources>

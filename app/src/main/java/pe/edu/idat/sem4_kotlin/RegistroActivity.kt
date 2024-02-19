@@ -3,6 +3,7 @@ package pe.edu.idat.sem4_kotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -26,7 +27,7 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener,
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Log.i("Mensaje Info", "App inicializada")
         binding.btnListar.setOnClickListener(this)
         binding.btnRegistrar.setOnClickListener(this)
         ArrayAdapter.createFromResource(
@@ -37,6 +38,9 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener,
             binding.spEstadocivil.adapter = adapter
         }
         binding.spEstadocivil.onItemSelectedListener = this
+        binding.cbDeportes.setOnClickListener(this)
+        binding.cbMusica.setOnClickListener(this)
+        binding.cbOtros.setOnClickListener(this)
     }
 
 
@@ -78,7 +82,7 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener,
             val infoPersona = binding.etNombres.text.toString()+ " " + 
                     binding.etApellidos.text.toString()+ " " +
                     obtenerGeneroSeleccionado()+ " " +
-                    listaPreferencias.toArray()+ " " +
+                    obtenerPreferencias()+ " " +
                     estadocivil+ " " +
                     binding.swNotificacion.isChecked
             listaPersonas.add(infoPersona)
@@ -87,6 +91,14 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener,
                 TipoMensaje.SUCCESFULL)
             setearControles()
         }
+    }
+
+    private fun obtenerPreferencias(): String{
+        var preferencias = ""
+        for (pref in listaPreferencias){
+            preferencias += "$pref -"
+        }
+        return preferencias
     }
 
     private fun setearControles() {
